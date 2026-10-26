@@ -1,0 +1,82 @@
+{
+  "_README": "Gaana config. Fill in 'token' and (if needed) 'lavalink.nodes'. Nothing is hardcoded in the source code — every secret lives here or in environment variables.",
+  "_REQUIRED": [
+    "token            -> Discord bot token (Developer Portal > Bot > Reset Token).",
+    "lavalink.nodes[] -> Your Lavalink v4 server: host, port, password, secure, id (any label)."
+  ],
+  "_OPTIONAL": [
+    "prefix               -> Command prefix. Default '?'.",
+    "botName              -> Branding shown in embeds/footers. Default 'Gaana'.",
+    "embedColor           -> Hex accent colour for embeds. Default '#f1b2c1'.",
+    "defaultVolume        -> Starting volume 0-150. Default 80.",
+    "maxVolume            -> Hard ceiling for the volume command. Default 150.",
+    "defaultSearchSource  -> 'ytsearch' (YouTube), 'ytmsearch' (YouTube Music), 'scsearch' (SoundCloud).",
+    "sourceChoice         -> Default source for plain-text searches: 'spotify' or 'youtube'. Users can switch it live from the Now Playing card buttons or with the 'source' command.",
+    "sources              -> Which link sources to hand to Lavalink by name (see below).",
+    "emojis               -> Optional icon overrides (see below).",
+    "maxQueueSize         -> Refuse new tracks past this queue length. Default 1000.",
+    "stayInVoiceByDefault -> true = bot stays connected when the queue empties. Default false.",
+    "supportServerUrl     -> Invite shown in help/support links (optional).",
+    "voteUrl              -> Vote page shown by the vote command (optional).",
+    "registerSlashCommands -> true = register slash commands on startup. Default true.",
+    "slashGuildIds        -> Optional list of guild IDs to register slash commands in instantly.",
+    "developerIds         -> Discord user IDs allowed to run owner-only commands.",
+    "activityRotation     -> Text templates for the rotating status. {prefix}, {servers}, {bot}, {commands} are replaced.",
+    "presence             -> Defaults for the status/stream/activity commands (see below)."
+  ],
+  "_SOURCES_NOTE": "Each key below enables handing that link type to Lavalink by name. A source only actually works if your Lavalink node has the matching plugin (LavaSrc for spotify/applemusic/deezer/yandexmusic). If a source is unavailable, Gaana automatically falls back to a YouTube search built from the link, so the song still plays. Set a key to false to pass the raw link through instead.",
+  "_EMOJIS_NOTE": "Optional. Override any icon with your own gradient/animated Discord emoji, e.g. \"play\": \"<a:play:123456789012345678>\". Set a key to \"\" to remove that icon. Leave the whole block empty to use the clean built-in glyphs. The 'spotify' and 'youtube' keys are the source-choice buttons on the Now Playing card \u2014 drop in your own brand emoji there (e.g. \"spotify\": \"<:spotify:123456789012345678>\").",
+
+  "token": "MTU2MzY2NTM1NzAwMzAzNDcxOQ.GveI-F.42FC-ubOJHDHGYFbaIZ_Ov9-yyFfOiqRypSxHE",
+  "prefix": "?",
+  "botName": "Gaana",
+  "embedColor": "#f1b2c1",
+  "defaultVolume": 80,
+  "maxVolume": 150,
+  "defaultSearchSource": "ytsearch",
+  "sourceChoice": "youtube",
+  "maxQueueSize": 1000,
+  "stayInVoiceByDefault": false,
+  "supportServerUrl": "",
+  "voteUrl": "",
+  "registerSlashCommands": true,
+  "slashGuildIds": [],
+  "developerIds": [],
+  "activityRotation": [
+    "{prefix}help  •  Gaana",
+    "music for {servers} servers",
+    "{commands} commands  •  /play",
+    "premium music, simplified"
+  ],
+  "presence": {
+    "defaultStreamUrl": "https://www.twitch.tv/gaana",
+    "defaultStreamText": "Gaana Radio",
+    "defaultActivityType": "listening"
+  },
+  "sources": {
+    "youtube": true,
+    "soundcloud": true,
+    "spotify": true,
+    "applemusic": true,
+    "deezer": true,
+    "yandexmusic": true,
+    "twitch": true,
+    "vimeo": true,
+    "bandcamp": true
+  },
+  "emojis": {
+    "spotify": "🎧",
+    "youtube": "▶️"
+  },
+  "lavalink": {
+    "nodes": [
+      {
+        "id": "main",
+        "host": "us3.visihost.in",
+        "port": 2774,
+        "password": "youshallnotpass",
+        "secure": false
+      }
+    ]
+  }
+}

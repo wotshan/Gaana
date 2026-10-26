@@ -1,0 +1,31 @@
+{
+  "name": "gaana",
+  "version": "7.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Gaana — a production-ready Discord music bot in a single file: dark minimalist UI, prefix + slash commands, interactive queue pagination, live Spotify/YouTube source switching, multi-source playback (YouTube, Spotify, SoundCloud, Apple Music, Deezer) and Lavalink playback.",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "check": "node index.js --check",
+    "deploy-commands": "node index.js --deploy-commands"
+  },
+  "keywords": [
+    "discord",
+    "music",
+    "bot",
+    "lavalink",
+    "gaana",
+    "slash-commands"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "express": "^5.2.1",
+    "lavalink-client": "^2.11.0"
+  }
+}
